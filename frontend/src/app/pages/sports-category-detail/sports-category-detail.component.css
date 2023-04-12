@@ -1,0 +1,54 @@
+/*Author: Sumit Kumar B00904097*/
+.court-card-header {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+}
+
+.square {
+    width: 160px;
+    height: 160px;
+    border-radius: 5px;
+    background-color: yellow;
+    border-radius: 4px 0 0 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-and-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.court-number {
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+}
+
+.price {
+    margin-right: 16px;
+}
+
+.book-now-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: auto;
+    margin-bottom: 8px;
+}
+
+.book-now-button {
+    min-width: 64px;
+    margin-right: -50px;
+}
+
+.absolute-right-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

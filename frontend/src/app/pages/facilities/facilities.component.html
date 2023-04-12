@@ -1,0 +1,43 @@
+<!-- Author : Venkata Vijaya Rama Raju Mandapati -->
+<main style="position: relative;padding-bottom: 150px;">
+    <app-header></app-header>
+    <h2 class="header"> Facilities</h2>
+    <div class="calendar">
+      <button mat-raised-button [routerLink]="['/facalendar','']" color="primary">Check Availablity for All Facilities</button>
+    </div>
+    
+    <mat-grid-list #grid [cols]="cols" rowHeight="370px" gutterSize="10px" class="container1">
+      <!-- cols="5"  -->
+      <mat-grid-tile *ngFor="let fac of facilities">
+           <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title>{{fac.title}}</mat-card-title>
+              <mat-card-subtitle>{{fac.subtitle}}</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+              <div [@details]="fac.state" class="detailscontent">
+                <img mat-card-lg-image [src]="fac.img" alt="Facility Image" >
+                <p> Square Footage: {{fac.foot}}</p> 
+                <p> Max Occupancy: {{fac.occ}}  </p>
+              </div>
+              <div [@hours]="fac.state" class="hourscontent">
+                  <h2>Working hours</h2>
+                  <p> Monday : {{fac.w[0]}}  </p> 
+                  <p> Tuesday : {{fac.w[1]}}  </p>
+                  <p> Wednesday : {{fac.w[2]}}  </p> 
+                  <p> Thursday : {{fac.w[3]}}  </p>
+                  <p> Friday : {{fac.w[4]}}  </p> 
+                  <p> Saturday : {{fac.w[5]}}  </p>
+                  <p> Sunday : {{fac.w[6]}}  </p> 
+              </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button [routerLink]="['/facalendar',fac._id]">Check Availablity</button>
+              <button mat-flat-button color="primary" (click)="toggle(fac._id)">Facility {{fac.desc}}</button>
+            </mat-card-actions>
+           </mat-card> 
+      </mat-grid-tile>
+    </mat-grid-list>  
+<app-footer></app-footer>
+</main>

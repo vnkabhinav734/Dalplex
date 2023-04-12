@@ -1,0 +1,49 @@
+<!-- Author : Venkata Vijaya Rama Raju Mandapati -->
+<main style="position: relative;padding-bottom: 150px;">
+<app-header></app-header>
+<h2 class="header"> Find a team for Tournament</h2>
+<form class="filters">
+    <mat-form-field appearance="fill" class="filter">
+      <mat-label>Sports</mat-label>
+      <mat-select [(ngModel)]="selectedSport" name="sport" (selectionChange) = "applyfilter()">
+        <mat-option value="">
+          Select
+        </mat-option>
+        <mat-option *ngFor="let sport of sportsCategoryDetails" [value]="sport._id">
+          {{sport.categoryname}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    </form>
+
+    <!-- 6 -->
+    <div class="grid-container">
+    <mat-grid-list #grid [cols]="cols" gutterSize="20px" rowHeight="250">
+      <div *ngIf="dataSource.length==0">
+        No Teams available for selected category
+      </div>
+        <mat-grid-tile *ngFor="let card of dataSource">
+            <!-- 7 -->
+            <mat-card class="card">
+                <mat-card-header>
+                  <mat-card-title>{{card.title}}</mat-card-title>
+                  <mat-card-subtitle>{{card.subtitle}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>{{card.desc}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-stroked-button
+                    matTooltip={{card.gameslots}}
+                    aria-label="Button that displays a tooltip when focused or hovered over">    
+                    Game Slots</button>
+                  <button mat-raised-button (click)="toggle(card._id)">{{card.reqState}}</button>
+                </mat-card-actions>
+              </mat-card>
+              <!-- 7 -->
+        </mat-grid-tile>
+      </mat-grid-list>
+      <!-- 6 -->
+    </div>
+    <app-footer></app-footer>
+</main>

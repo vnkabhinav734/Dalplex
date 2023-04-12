@@ -1,0 +1,36 @@
+<!-- Author : Venkata Vijaya Rama Raju Mandapati -->
+<main style="position: relative;padding-bottom: 150px;">
+  <app-header></app-header>
+  <!-- else all 3 -->
+<h2 class="header"> Tournament Matches</h2>
+<ng-container *ngIf="(asyncTabs | async) === null">
+    Loading matches...
+  </ng-container>
+  
+  <mat-tab-group mat-align-tabs="center">
+    <mat-tab *ngFor="let tab of asyncTabs | async">
+      <ng-template mat-tab-label>{{tab.label}}</ng-template>
+      <!-- 5 -->
+      <table mat-table [dataSource]=tab.content class="mat-elevation-z8 demo-table">
+        <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+          <th mat-header-cell *matHeaderCellDef>
+            {{column.header}}
+          </th>
+          <td mat-cell *matCellDef="let row">
+            {{column.cell(row)}}
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <div class="error" *ngIf="tab.content.length==0">
+        No data available for selected category
+      </div>
+      <!-- 5 -->
+    </mat-tab>
+  </mat-tab-group>
+  <!-- else all 3 -->
+  <app-footer></app-footer>
+</main>

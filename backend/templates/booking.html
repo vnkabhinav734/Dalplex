@@ -1,0 +1,78 @@
+<!-- Author: Sumit Kumar B00904097 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Booking Details</title>
+    <style>
+      /* Define CSS styles inline to ensure maximum compatibility with email clients */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 0;
+        margin: 0;
+      }
+
+      table {
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
+        border-collapse: collapse;
+      }
+
+      td {
+        padding: 20px;
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: left;
+      }
+
+      td.header {
+        background-color: #ffffff;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      td.footer {
+        background-color: #ffffff;
+        font-size: 12px;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      td.footer a {
+        color: #999999;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td class="header">
+          Booking Details
+        </td>
+      </tr>
+      <tr>
+        <td style="background-color: #ffffff;">
+          Dear {username},
+
+          <p>Your booking is confirmed for:</p>
+
+          {bookings}
+
+          <p>Your billing address is:</p>
+
+          <p>{billingaddress}</p>
+
+          <p>Thank you for your booking!</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="footer">
+            This email was sent by Dalplex, located at 6260 South Street, PO BOX 15000, Halifax, Nova Scotia, B3H 4R2.
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

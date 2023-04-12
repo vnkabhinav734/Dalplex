@@ -1,0 +1,62 @@
+/* Author:Falgun Jairaj Thakwani B00932083 */
+.heading{
+  margin-top: 30px;
+}
+.billing-add{
+  margin-left: 20px;
+  padding-top: 10px;
+}
+.select-card{
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  flex: 2;
+  justify-content: space-between;
+}
+.add-card{
+  margin-right: 20px;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.pay-button{
+  width:250px;
+  margin-bottom: 20px;
+}
+.credit-card {
+  display: inline-block;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px rgba(10, 9, 9, 0.3);
+}
+
+.card-main{
+  margin-top:4%;
+  margin-bottom:4%;
+  display: flex;
+}
+.card-number {
+  letter-spacing: 1px;
+  color: black;
+}
+
+.card-error{
+  color:red;
+}
+.card-footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+
+
+

@@ -1,0 +1,54 @@
+<!-- Author : Venkata Vijaya Rama Raju Mandapati -->
+<main style="position: relative;padding-bottom: 150px;">
+<app-header></app-header>
+<div class="wholepage">
+    <h2 class="header"> Tournament LeaderBoard</h2>
+    <form class="filters">
+        <mat-form-field appearance="fill" class="filter">
+          <mat-label>Tournament</mat-label>
+          <mat-select [(ngModel)]="selectedTournament" name="tournament" (selectionChange) = "applyfilter()">
+            <mat-option value="">
+              Select
+            </mat-option>
+            <mat-option *ngFor="let tournament of tournaments" [value]="tournament._id">
+              {{tournament.tournamentname}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="filter">
+            <mat-label>Sport</mat-label>
+            <mat-select [(ngModel)]="selectedSport" name="sport" (selectionChange) = "applyfilter()">
+              <mat-option value="">
+                Select
+              </mat-option>
+              <mat-option *ngFor="let sport of sportsCategoryDetails" [value]="sport._id">
+                {{sport.categoryname}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+      </form>
+
+    <!-- 5 -->
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+      <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+        <th mat-header-cell *matHeaderCellDef>
+          {{column.header}}
+        </th>
+        <td mat-cell *matCellDef="let row">
+          {{column.cell(row)}}
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div class="error" *ngIf="dataSource.length==0">
+      No data available for selected category
+    </div>
+    <!-- 5 -->
+
+</div>
+<app-footer></app-footer>
+</main>

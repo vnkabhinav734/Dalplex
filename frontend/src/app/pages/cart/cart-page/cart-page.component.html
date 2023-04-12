@@ -1,0 +1,98 @@
+<!--Author: Falgun Jairaj Thakwani B009302083-->
+<main style="position: relative;padding-bottom: 150px;">
+<app-header></app-header>
+<div class="container mat-elevation-z8">
+  <div *ngIf="isLoading" class="spinner-container">
+    <mat-spinner ></mat-spinner>
+  </div>
+  <ng-container *ngIf="data.items.length>0;else noItems">
+<div class="cartTable">
+  <table mat-table [dataSource]="data.items">
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef><h1>YOUR CART</h1></th>
+      <td mat-cell *matCellDef="let element"> <button mat-icon-button color="black" (click)="deleteItem(element._id)">
+        <mat-icon>delete</mat-icon>
+      </button></td>
+    </ng-container>
+    <ng-container matColumnDef="image">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element"><img class="itemImage" src="./assets/{{element.court_img}}.png"
+        alt="{{data.username}}"></td>
+    </ng-container>
+
+    <ng-container matColumnDef="program">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td  mat-cell *matCellDef="let element"><h2>{{ element.program }}</h2>
+        Booking For<br>
+        {{data.username}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="bookingDate">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">{{ element.bookingdate | date: 'EEE, MMM d, y' }}<br>
+      {{element.interval}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">${{ element.price }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+</div>
+<mat-divider class="vertical-divider" vertical></mat-divider>
+  <div class="cartTotal">
+
+    <h1>CART TOTALS</h1>
+    <hr>
+    <br>
+    <div class="cart-main">
+    <div>
+      <p>Subtotal </p>
+      <p>Tax</p>
+      <p>Discount</p>
+      <br>
+      <hr>
+      <br>
+      <h2>Total</h2>
+    </div>
+    <div></div>
+    <div>
+      <p>${{data.subTotal}}</p>
+      <p>${{data.tax}}</p>
+      <p>${{data.discount}}</p>
+      <br>
+      <hr>
+      <br>
+      <h2>${{data.total}}</h2>
+    </div>
+  </div>
+  <div class="buttons">
+    <button mat-raised-button color="primary" routerLink="/payment-page">CHECKOUT</button>
+  </div>
+  <br>
+  <br>
+  <div class="link">
+    <a class="continueBooking" routerLink="/categories">CONTINUE BOOKING</a>
+  </div>
+  <br>
+  </div>
+</ng-container>
+<ng-template #noItems>
+  <div class="empty">
+
+  <div class="buttons">
+    <h1 class="text">Your cart is empty.</h1><div>
+    <button mat-raised-button color="primary" routerLink="/categories">CONTINUE BOOKING</button>
+  </div>
+  </div>
+</div>
+</ng-template>
+</div>
+<app-footer></app-footer>
+</main>

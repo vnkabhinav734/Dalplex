@@ -1,0 +1,43 @@
+mat-card{
+    max-width: 600px;
+    margin: 2em auto;
+    text-align: center;
+    max-height: 600px;
+}
+
+.header{
+    text-align: center;
+}
+
+.full-width{
+    width: 80%;
+}
+
+.email-input{
+    padding-top: 10px;
+}
+
+.firstname-input{
+    padding-top: 10px;
+}
+
+.lastname-input{
+    padding-top: 10px;
+}
+
+.password-input{
+    padding-top: 10px;
+}
+
+.confirmpassword-input{
+    padding-top: 10px;
+}
+
+.bg{
+    background: url('https://th.bing.com/th/id/R.2c897c9f5b6a241fa4f8531b5e15805c?rik=XqxzJaf50%2fi%2bUw&pid=ImgRaw&r=0') no-repeat center;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}

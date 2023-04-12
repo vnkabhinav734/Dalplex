@@ -1,0 +1,36 @@
+<!-- Author: Sumit Kumar B00904097 -->
+<main style="position: relative;padding-bottom: 150px;">
+    <app-header></app-header>
+    <form [formGroup]="bookingForm" class="form-container">
+        <h1 style="text-align: center;">Booking Slot - {{courtDetails?.name}}</h1>
+        <div class="row">
+            <div class="col-sm-6">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Select Booking Date</mat-label>
+                    <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate" placeholder="Booking date" formControlName="bookingdate" (dateChange)="onBookingDateChange($event)"> 
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row" *ngIf="selectedDate != null">
+            <div class="col-sm-12">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col" *ngFor="let timeInterval of allSlotsByDate$ | async;" style="margin-bottom: 20px;">
+                        <div class="card">
+                            <mat-card [ngClass]="{'available': timeInterval.status == 'available', 'booked': timeInterval.status == 'booked', 'selected': selectedTimeInterval === timeInterval.interval}" (click)="onTimeIntervalSelected($event, timeInterval)">
+                                <mat-card-content style="text-align: center;">{{timeInterval.interval}}<mat-icon *ngIf="selectedTimeInterval === timeInterval.interval">done</mat-icon></mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" style="text-align: right;">
+                <button mat-raised-button color="primary" (click)="onAddtoCart()" [disabled]="bookingForm.invalid || selectedTimeInterval == ''"><mat-icon>shopping_cart</mat-icon> Add to Cart</button>
+            </div>
+        </div>
+    </form>
+    <app-footer></app-footer>
+</main>

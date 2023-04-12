@@ -1,0 +1,43 @@
+<!-- Author: Sumit Kumar B00904097 -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <caption></caption>
+  
+    <ng-container matColumnDef="invoice">
+      <th mat-header-cell *matHeaderCellDef>invoice#</th>
+      <td mat-cell *matCellDef="let element">{{ element._id.substr(-5) }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>date</th>
+      <td mat-cell *matCellDef="let element">{{ getBookingDate(element.date) }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef>total</th>
+      <td mat-cell *matCellDef="let element">{{ formatCurrency(element.subTotal) }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="paid">
+      <th mat-header-cell *matHeaderCellDef>paid</th>
+      <td mat-cell *matCellDef="let element">{{ formatCurrency(element.paid) }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="owing">
+      <th mat-header-cell *matHeaderCellDef>owing</th>
+      <td mat-cell *matCellDef="let element">{{ formatCurrency(element.owing) }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="print">
+        <th mat-header-cell *matHeaderCellDef>print</th>
+        <td mat-cell *matCellDef="let element"><button mat-raised-button (click)="generatePDF('print', element._id)"><mat-icon>print</mat-icon> Print</button></td>
+    </ng-container>
+
+    <ng-container matColumnDef="download">
+        <th mat-header-cell *matHeaderCellDef>download</th>
+        <td mat-cell *matCellDef="let element"><button mat-raised-button (click)="generatePDF('download', element._id)"><mat-icon>download</mat-icon> Download</button></td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  

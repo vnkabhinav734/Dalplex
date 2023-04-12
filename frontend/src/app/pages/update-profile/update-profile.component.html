@@ -1,0 +1,76 @@
+<!-- Author: Sumit Kumar B00904097 -->
+<form [formGroup]="profileForm" class="form-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Profile Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" formControlName="firstname">
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" formControlName="lastname">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Email" formControlName="email">
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input matInput placeholder="Phone" formControlName="phone">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Address</mat-label>
+            <textarea  formControlName="address" matInput placeholder="Address"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 top-padding">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dob">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>About</mat-label>
+            <textarea  formControlName="about" matInput placeholder="About"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 top-padding">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Sex</mat-label>
+            <mat-select formControlName="sex">
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
+              <mat-option value="other">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions style="text-align: right;">
+      <button (click)="onEdit()" mat-raised-button color="primary" *ngIf="profileForm.disabled"><mat-icon>edit</mat-icon> Edit</button>
+      <button (click)="onSubmit()" mat-raised-button color="primary" *ngIf="profileForm.enabled"><mat-icon>save</mat-icon> Save</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

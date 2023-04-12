@@ -1,0 +1,29 @@
+<!-- Author: Sumit Kumar B00904097 -->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a mat-button routerLink="/categories" aria-label="Home">
+      <img src="assets/dalplex-logo.png" alt="Brand logo">
+    </a>
+    <div *ngFor="let item of menuItems.items">
+      <button *ngIf="item.show" mat-button [routerLink]="item.route"><mat-icon>{{item.icon}}</mat-icon>{{item.displayName}}</button>
+    </div>
+    <span class="fill-space"></span>
+    <button *ngIf="menuItems.showCart" mat-icon-button routerLink="/cart-page" aria-label="Cart">
+      <mat-icon>shopping_cart</mat-icon>
+      <mat-badge matBadge="{{count}}" matBadgeSize="small" matBadgeColor="accent"></mat-badge>
+    </button>
+    <button *ngIf="menuItems.showProfile" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Profile menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" class="profile-menu">
+      <button mat-menu-item routerLink="/profile" aria-label="Profile">
+        <mat-icon>person</mat-icon>
+        <span>My profile</span>
+      </button>
+      <button mat-menu-item (click)="logout()" aria-label="Logout">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>

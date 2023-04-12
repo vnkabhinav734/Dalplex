@@ -1,0 +1,25 @@
+/*Author:Falgun Jairaj Thakwani B00932083*/
+.cart-main{
+  margin-left: 30px;
+  margin-top:20px;
+  width:400px;
+}
+
+.buttons{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.link{
+  display: flex;
+  justify-content: center;
+}
+
+.mat-divider{
+  border:1px solid grey;
+}
+
+a{
+color: black;
+}

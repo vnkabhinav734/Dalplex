@@ -1,0 +1,39 @@
+<!-- Author : Venkata Vijaya Rama Raju Mandapati -->
+<main style="position: relative;padding-bottom: 150px;">
+<app-header></app-header>
+<div class="wholepage">
+    <h2 class="header"> Tournaments</h2>
+
+<!-- 6 -->
+<mat-grid-list #grid [cols]="1" gutterSize="20px" rowHeight="250">
+    <mat-grid-tile>
+        <mat-card routerLink="/trank">
+            <img mat-card-lg-image src="assets/trophy.jpg" alt="Leader Board" >
+            <mat-card-title style="text-align: center;">Leader Board</mat-card-title>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile >
+        <mat-card routerLink="/tfiteam">
+            <img mat-card-lg-image src="assets/team.png" alt="Find a Team" >
+            <mat-card-title style="text-align: center;">Find a Team</mat-card-title>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card routerLink="/tmatch">
+            <img mat-card-lg-image src="assets/match1.png" alt="Matches" >
+            <mat-card-title style="text-align: center;">Match</mat-card-title>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card routerLink="/tleague">
+            <img mat-card-lg-image src="assets/league.png" alt="Leagues" style="padding-bottom: 10px;">
+            <mat-card-title style="text-align: center;">League</mat-card-title>
+        </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  
+
+  <!-- 6 -->
+</div>
+<app-footer></app-footer>
+</main>

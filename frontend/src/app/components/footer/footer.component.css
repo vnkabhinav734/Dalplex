@@ -1,0 +1,29 @@
+/*Author: Sumit Kumar B00904097*/
+
+mat-sidenav-container {
+    background-color: black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    margin-left: 60px;
+}
+
+.footer {
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+::ng-deep .mat-drawer-content {
+    overflow: hidden !important;
+}
+
+.link-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+}

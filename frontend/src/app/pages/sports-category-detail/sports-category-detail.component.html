@@ -1,0 +1,23 @@
+<!-- Author: Sumit Kumar B00904097 -->
+<main style="position: relative;padding-bottom: 150px;">
+  <app-header></app-header>
+  <div *ngIf="currentUserRole == 'admin'" style="text-align: right; margin: 20px;"><button mat-raised-button color="primary" (click)="showAddCourtDialog()"><mat-icon>add</mat-icon> Add New Court</button></div>
+  <mat-card style="margin: 20px 20% 20px 20%" *ngFor="let item of courtDetails">
+    <div class="court-card-header">
+      <div class="square">
+        <span class="court-number">{{ item.court | uppercase}}</span>
+      </div>
+      <div class="title-and-body">
+        <mat-card-title>{{item.name}}</mat-card-title>
+        <mat-card-content style="padding: 10px 0px 0px 0px;">{{item.description}}</mat-card-content>
+        <div class="book-now-container">
+          <button mat-raised-button color="primary" class="book-now-button" [routerLink]="['/booking', item._id]">
+            Book Now
+          </button>
+        </div>
+      </div>
+      <mat-card-subtitle class="price">{{item.price | currency}}</mat-card-subtitle>
+    </div>
+  </mat-card>
+  <app-footer></app-footer>
+</main>

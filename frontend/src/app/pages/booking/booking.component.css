@@ -1,0 +1,28 @@
+/*Author: Sumit Kumar B00904097*/
+mat-card.available {
+    background-color: white;
+    cursor: pointer;
+}
+
+mat-card.booked {
+    background-color: #808080;
+    cursor: not-allowed;
+}
+
+mat-card.selected {
+    background-color: #f44336;
+    color: #fff;
+}
+
+mat-icon {
+    vertical-align: middle;
+    margin: -3px 0px 0px 8px;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.form-container{
+    margin: 50px 70px 80px 70px;
+}

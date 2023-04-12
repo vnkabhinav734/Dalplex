@@ -1,0 +1,66 @@
+.container{
+  display: flex;
+}
+
+
+.vertical-divider {
+  /* display: flex;
+  flex-direction: row; */
+  /* height: 100%; */
+  /* width: 50%; */
+  margin: 0 8px;
+}
+
+.itemImage{
+  height: 100px;
+  width: 100px;
+  margin-right: 50px;
+  border-radius: 8px;
+}
+
+.itemTitle{
+margin-right: 50px;
+}
+
+.itemQuantity{
+  margin-left: 50px;
+}
+
+.delete-button{
+  margin-right:20px;
+}
+.update-cart{
+  display: flex;
+}
+.apply-button{
+  margin-left: 20px;
+  height:40px;
+  width: 100px;
+}
+.link{
+  justify-content: end;
+}
+.cart-main{
+  margin-left: 30px;
+  margin-top:20px;
+  width:400px;
+}
+
+.buttons{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.link{
+  display: flex;
+  justify-content: center;
+}
+
+.mat-divider{
+  border:1px solid grey;
+}
+
+a{
+color: black;
+}

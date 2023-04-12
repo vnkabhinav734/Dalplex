@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <img src="assets/dalplex-logo.png" alt="Logo" />
+  <span class="spacer"></span>
+  <button mat-button [routerLink]="['/about']"><mat-icon>info</mat-icon>About Us</button>
+  <button mat-button [routerLink]="['/register']"><mat-icon>person_add</mat-icon>Sign Up</button>
+  <button mat-button [routerLink]="['/login']"><mat-icon>login</mat-icon>Login</button>
+</mat-toolbar>
+
+<div class="background-image"></div>
+
+<div class="content">
+  <h1>Join Our Community Today!</h1>
+  <p>
+    Elevate your game with world-class facilities, expert coaching, and a
+    vibrant community of athletes at Dalhousie University.
+  </p>
+  <button mat-raised-button color="accent" [routerLink]="['/register']">
+    <mat-icon>person_add</mat-icon>Sign Up Now
+  </button>
+</div>

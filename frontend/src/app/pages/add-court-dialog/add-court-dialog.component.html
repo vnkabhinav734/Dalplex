@@ -1,0 +1,40 @@
+<!-- Author: Sumit Kumar B00904097 -->
+<h1 mat-dialog-title>Add New Court</h1>
+<div mat-dialog-content>
+  <form [formGroup]="addCourtform">
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Court Number</mat-label>
+                <input matInput formControlName="courtnumber" placeholder="Court Number" />
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Price</mat-label>
+                <input matInput formControlName="price" placeholder="Price" />
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Court Name</mat-label>
+                <input matInput formControlName="name" placeholder="Court Name" />
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput formControlName="description" placeholder="Description" />
+            </mat-form-field>
+        </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+</div>
